@@ -51,7 +51,7 @@
 - 能力沉淀：9 章 + 2 挂靠章 PRD、Prompt Spec 行为合同、Eval Spec、四档成本预算、三阶段灰度与 4 条回滚条件。
 - 口径说明：PRD 中完成率 / 时长 / 有据率等为**验收基线**，非实测达成值；Dify 单路 41.2s / 85,113 tokens 为实测锚点，仅作参照，不作线性外推。
 
-**交付物**：PRD（PDF，含修订记录）、面试讲述指南、多智能体代码复用模板、`deepsearch-agents/` 源码与架构图。
+**交付物**：PRD（PDF，含修订记录）、`deepsearch-agents/` 源码与架构图、系统真实生成的示例报告、PRD↔代码差距清单（prd-gap.md）。
 
 > 说明：本项目技术实现基于开源教程 `ai-agents-from-zero` 的配套源码；我的贡献集中在产品侧——需求分析、PRD 全章定稿、指标与验收体系、边界与成本决策、上线灰度设计及差距清单管理。
 
@@ -103,8 +103,8 @@
 ```
 /
 ├── README.md
-├── 问数系统/            # PRD（飞书版）、评测集模板、Prompt 模板库、原型截图、shopkeeper-agent 源码
-├── 深度搜索系统/        # 已有：深度搜索系统-PRD.pdf + deepsearch/
+├── 问数系统/            # PRD（飞书导出版 PDF）、原型截图、dify 知识库、shopkeeper-agent/ 源码
+├── 深度研搜系统/        # PRD（飞书导出版 PDF）、deepsearch-agents/ 源码、示例产出报告、差距清单
 └── 客服助手项目/        # 待补：F1–F4 报告、原型、可运行 MVP
 ```
 
@@ -112,12 +112,7 @@
 
 ---
 
-## 上传前检查（必做）
+## 仓库说明
 
-- [ ] 删除所有 `.env`（三个项目里都有），只保留 `.env.example` —— **密钥泄露是最容易踩的坑**
-- [ ] 删除 `myenv/`、`.venv/`、`node_modules/`、`__pycache__/`、`.pytest_cache/`
-- [ ] `docs/knowledge_base/` 下的第三方 PDF 白皮书改为外链（版权 + 仓库体积）
-- [ ] 大文件（zip、演示视频、PRD PDF）改为外链，不直接进 Git
-- [ ] 深度研搜在对应 README 标明开源来源与自己的贡献边界
-- [ ] 姓名用字在仓库名、描述、README、报告、简历中统一
-- [ ] 每个项目目录补一份独立 README，首页用相对路径链接过去
+- 密钥、虚拟环境、第三方版权材料（知识库 PDF 白皮书）、求职内部材料均不入库；两个项目 PRD 为飞书文档导出版 PDF，均为本人原创。
+- 深度研搜技术实现基于开源教程 [ai-agents-from-zero](https://github.com/didilili/ai-agents-from-zero)，贡献边界见该项目 README 的声明。
