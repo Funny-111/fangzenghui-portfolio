@@ -1,0 +1,61 @@
+logging:
+  file:
+    enable: true
+    level: INFO
+    path: logs
+    rotation: "10 MB"
+    retention: "7 days"
+  console:
+    enable: true
+    level: INFO
+
+db_meta:
+  host: localhost
+  port: 3306
+  user: didilili
+  password: dili123
+  database: meta
+
+db_dw:
+  host: localhost
+  port: 3306
+  user: didilili
+  password: dili123
+  database: dw
+
+qdrant:
+  host: localhost
+  port: 6333
+  embedding_size: 1024
+
+embedding:
+  host: localhost
+  port: 8081
+  model: BAAI/bge-large-zh-v1.5
+
+es:
+  host: localhost
+  port: 9200
+  index_name: data_agent
+
+llm:
+  # 三项均可用环境变量覆盖，切换模型做对比实验：
+  #   LLM_PROVIDER / LLM_MODEL / LLM_BASE_URL
+  provider: ${oc.env:LLM_PROVIDER,anthropic}
+  model_name: ${oc.env:LLM_MODEL,mimo-v2.6-flash}
+  api_key: ${oc.env:LLM_API_KEY}
+  base_url: ${oc.env:LLM_BASE_URL,https://api.xiaomimimo.com/anthropic}
+  # 推理模型的 thinking 开关：enabled / disabled（LLM_THINKING 可覆盖）
+  thinking: ${oc.env:LLM_THINKING,enabled}
+
+safety:
+  sql_timeout_seconds: 10
+  max_result_rows: 1000
+  max_correction: 1
+  max_llm_calls: 7
+  sensitive_columns: []
+  # 单次查询总耗时预算（PRD 六a.4；修订 10 由 30s 调至 60s）
+  total_budget_seconds: 60
+
+# 降级演示开关（PRD 八.3）：true=强制简易模式，用于演示供应商不可用场景
+degraded_mode: ${oc.env:DEGRADED_MODE,false}
