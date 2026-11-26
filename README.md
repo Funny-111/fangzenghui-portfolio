@@ -103,7 +103,7 @@
 ```
 /
 ├── README.md
-├── 问数系统/            # 已有：问数系统-PRD.pdf + shopkeeper-agent/
+├── 问数系统/            # PRD（飞书版）、评测集模板、Prompt 模板库、原型截图、shopkeeper-agent 源码
 ├── 深度搜索系统/        # 已有：深度搜索系统-PRD.pdf + deepsearch/
 └── 客服助手项目/        # 待补：F1–F4 报告、原型、可运行 MVP
 ```
