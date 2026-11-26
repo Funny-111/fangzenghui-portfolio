@@ -224,3 +224,4 @@ __marimo__/
 
 # 本地虚拟环境（本机项目使用 myenv/ 命名）
 myenv/
+深度研搜系统/deepsearch-agents/frontend/.env.local
